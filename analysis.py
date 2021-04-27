@@ -43,6 +43,62 @@ def filter_virginica(data):
     return(virginica)
 
 
+# Histograms
+# 1. Histograms for Sepal Length - All data vs species
+# Instructions to display 4 different histograms on one page based on https://www.python-graph-gallery.com/25-histogram-with-several-variables-seaborn 
+# and https://matplotlib.org/stable/gallery/statistics/histogram_multihist.html#sphx-glr-gallery-statistics-histogram-multihist-py
+def hist_seplen(data, setosa, versicolor, virginica):
+    #setosa = (data[data["Species"] == "Iris-setosa"])
+    #versicolor = (data[data["Species"] == "Iris-versicolor"]) 
+    #virginica = (data[data["Species"] == "Iris-virginica"])
+    fig, axs = plt.subplots(nrows=2, ncols=2)                                       # defines the output, display 4 plots in 2 rows, 2 columns
+    data["Sepal Length"].hist(color = 'black', ax=axs[0,0])                         # all data
+    setosa["Sepal Length"].hist(color = '#8D66BE', ax=axs[0, 1])                        # setosa
+    versicolor["Sepal Length"].hist(color = '#7938C4', ax=axs[1, 0])                   # versicolor
+    virginica["Sepal Length"].hist(color = '#7782B0', ax=axs[1, 1])                   # virginica
+    fig.tight_layout()
+    #plt.show()
+    plt.savefig("sepallength")
+
+
+
+# 2. Histograms for Sepal Width
+def hist_sepwid(data, setosa, versicolor, virginica):
+    fig, axs = plt.subplots(nrows=2, ncols=2)
+    data["Sepal Width"].hist(color = 'black', ax=axs[0,0])                         # all data
+    setosa["Sepal Width"].hist(color = 'red', ax=axs[0, 1])                        # setosa
+    versicolor["Sepal Width"].hist(color = 'blue', ax=axs[1, 0])                   # versicolor
+    virginica["Sepal Width"].hist(color = 'green', ax=axs[1, 1])                   # virginica
+    fig.tight_layout()
+    #plt.show()
+    plt.savefig("sepalwidth")
+
+
+# 3. Histograms for Petal Length
+def hist_petlen(data, setosa, versicolor, virginica):
+    fig, axs = plt.subplots(nrows=2, ncols=2)
+    data["Petal Length"].hist(color = 'black', ax=axs[0,0])                         # all data
+    setosa["Petal Length"].hist(color = 'red', ax=axs[0, 1])                        # setosa
+    versicolor["Petal Length"].hist(color = 'blue', ax=axs[1, 0])                   # versicolor
+    virginica["Petal Length"].hist(color = 'green', ax=axs[1, 1])                   # virginica
+    fig.tight_layout()
+    #plt.show()
+    plt.savefig("petallength")    
+
+
+# 4. Histograms for Petal Width
+def hist_petwid(data, setosa, versicolor, virginica):
+    fig, axs = plt.subplots(nrows=2, ncols=2)
+    data["Petal Width"].hist(color = 'black', ax=axs[0,0])                         # all data
+    setosa["Petal Width"].hist(color = 'red', ax=axs[0, 1])                        # setosa
+    versicolor["Petal Width"].hist(color = 'blue', ax=axs[1, 0])                   # versicolor
+    virginica["Petal Width"].hist(color = 'green', ax=axs[1, 1])                   # virginica
+    fig.tight_layout()
+    #plt.show()
+    plt.savefig("petalwidth")  
+
+
+
 # Plot (scatter), comparing petal length and width
 def plot_data(data):
     print("plot!")
@@ -101,12 +157,16 @@ def main():
     #print(data)
     text_output(data)
     text_overview(data)
-    plot_data(data)
+    #plot_data(data)
     setosa = filter_setosa(data)
     versicolor = filter_versicolor(data)
     virginica = filter_virginica(data)
     print(virginica)
-    histo_all(data)
+    hist_seplen(data, setosa, versicolor, virginica)
+    hist_sepwid(data, setosa, versicolor, virginica)
+    hist_petlen(data, setosa, versicolor, virginica)
+    hist_petwid(data, setosa, versicolor, virginica)
+    #histo_all(data)
     
     
     text_setosa(setosa)
