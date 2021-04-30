@@ -160,7 +160,7 @@ https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparis
 <br />
 
 ---
-### **Summary of Data Set in Text File (datasummary.txt) - Program Part 4**
+### **Summary of Data Set in Text File - Program Part 4**
 To provide a summary of the data set, I defined a function which outputs the result of several statistical summaries to a text file using the pandas `write()` function.
 
 These include a sample of the data set (one row for each species), row and column count and the data type of each column. 
@@ -211,7 +211,7 @@ https://datagy.io/pandas-select-columns/
 <br />
 
 ---
-### **Part 5 - Histogram of each Variable in .png File - Program Part 5**
+### **Histogram of each Variable - Program Part 5**
 For the histograms of each variable, I combined four histograms for each attribute into one figure, using the `pyplot.subplots()` function. It gives the flexibility to add single plots to one joint figure, specifying how many subplots should be displayed per row and column. As I was aiming to display four histograms, I opted for a 2x2 matrix.
 
 
