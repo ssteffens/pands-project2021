@@ -29,7 +29,7 @@ Because of its relatively small size and consistent data profile, the Iris flowe
 
 R. A. Fischer (1936): The Use Of Multipe Measurements In Taxonomic Problems, accessed through http://hdl.handle.net/2440/15227 
 <br />
-General Information on Iris flower data set:
+General information on Iris flower data set:
 <br />
 https://archive.ics.uci.edu/ml/datasets/Iris
 <br />
